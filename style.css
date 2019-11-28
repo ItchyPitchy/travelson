@@ -9,17 +9,33 @@ body {
     margin: 0;
 }
 
+p {
+    font-size: 14px;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 27px;
+}
+
+
+
 nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 150px;
+    background-color: rgb(237, 237, 237);
 }
 
-.logo {
+/* .logo {
     flex: auto;
-}
+} */
 
 ul {
     margin: 0;
@@ -39,22 +55,26 @@ li {
 
 .header-img {
     width: 100%;
+    min-height: 325px;
     z-index: -1;
+    object-fit: cover;
 }
 
 .header-text-wrapper {
     text-align: center;
     position: absolute;
+    padding: 0 19px;
 }
 
-main {
+section:nth-of-type(2n) {
+    background-color: rgb(237, 237, 237);
 }
 
 
 
 .section1 {
     text-align: center;
-    margin: 0 19px;
+    padding: 19px;
 }
 
 .section1 img {
@@ -65,7 +85,7 @@ main {
 
 .section2 {
     text-align: center;
-    margin: 0 14px;
+    padding: 19px 14px;
 }
 
 .section2 > .image-wrapper {
@@ -79,27 +99,30 @@ main {
     margin: 5px;
     width: 100px;
     height: 100px;
+    object-fit: cover;
 }
 
 
 
 .section3 {
-    margin: 0 19px;
+    padding: 19px;
 }
 
 .section3 .image-wrapper {
     display: grid;
     grid-template: 
-        "image1 image2" 1fr
+        "image1 image2" auto
         "image3 image3" 1fr /
         1fr 1fr;
         gap: 10px;
 }
 
+.section3 img {
+    width: 100%;
+}
+
 .section3 .item3 {
     grid-area: image3;
-    width: 100%;
-    height: 100%;
 }
 
 .section3 .item4 {
@@ -114,7 +137,7 @@ main {
 }
 
 .section4 .item1 {
-    margin: 19px;
+    padding: 19px;
 }
 
 .section4 .item2 {
@@ -125,7 +148,7 @@ main {
 
 .section5 {
     text-align: center;
-    margin: 0 19px;
+    padding: 19px;
 }
 
 .section5 .item2, .section5 .item3, .section5 .item4, .section5 .item5 {
@@ -142,7 +165,7 @@ main {
     grid-area: 2 / 1 / 3 / 3;
     order: 1;
     margin: -25% 5%;
-    padding: 25px;
+    padding: 5vw;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -163,5 +186,4 @@ main {
 */
 .section5 img {
     width: 100%;
-    object-fit: cover;
 }
