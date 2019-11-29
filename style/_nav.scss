@@ -1,0 +1,12 @@
+nav {
+    @include flexCenterDirection(column);
+    height: 150px;
+    background-color: $sectionBackground-odd;
+    ul {
+        @include removeMarginAndPadding();
+        li {
+            display: inline-block;
+            list-style-type: none;
+        }
+    }
+}
