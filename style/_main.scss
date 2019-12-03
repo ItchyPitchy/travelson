@@ -1,0 +1,220 @@
+.section1 {
+    padding: 100px 20px;
+    text-align: center;
+    .grid {
+        display: grid;
+        grid-template: repeat(2, minmax(300px, auto)) / 1fr;
+        gap: 5em;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+        margin: 50px 0;
+    }
+    .image-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    img {
+        @extend %general-grid-image;
+    }
+    @include media-min-width(768px) {
+        padding: 75px 75px;
+        .grid {
+            grid-template: auto / 1fr 1fr;
+            &:nth-of-type(even) {
+                .image-wrapper {
+                    order: -1;
+                }
+            }
+        }
+    }
+}
+
+.section2 {
+    padding: 75px 20px;
+    text-align: center;
+    .images-container {
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        margin: 0 -5px;
+    }
+    .image-wrapper {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @include media-min-width(768px) {
+        padding: 75px 75px;
+        .image-wrapper {
+            width: 165px;
+            height: 165px;
+        }
+    }
+}
+
+.section3 {
+    padding: 75px 20px;
+    .grid {
+        display: grid;
+        grid-template:
+            "txt txt" minmax(300px, 1fr)
+            "image1 image2" minmax(300px, 1fr)
+            "image3 image3" minmax(300px, 1fr) / 
+            1fr 1fr;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+        min-height: 900px;
+    }
+    .image-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    img {
+        @extend %general-grid-image;
+    }
+    .item1 {
+        grid-area: txt;
+    }
+    .item4 {
+        grid-area: image3;
+    }
+    .item5 {
+        display: none;
+    }
+    @include media-min-width(768px) {
+        padding: 75px 75px;
+        .grid {
+            grid-template:
+                "txt image1 image2 image4" minmax(300px, 1fr)
+                "txt image3 image3 image4" minmax(300px, 1fr) /
+                2fr 1fr 1fr 1fr;
+            min-height: 600px;
+        }
+        .item1 {
+            margin-right: 4em;
+        }
+        .item5 {
+            display: unset;
+            grid-area: image4;
+        }
+    }
+}
+
+.section4 {
+    .grid {
+        display: grid;
+        grid-template: minmax(300px, 1fr) minmax(auto, 400px) / 1fr;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+    }
+    .image-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-height: 500px;
+    }
+    img {
+        content: url("../section-4/tundra-small.jpg");
+        @extend %general-grid-image;
+    }
+    .item1 {
+        margin: 0 20px;
+    }
+    @include media-min-width(768px) {
+        .grid {
+            grid-template: minmax(300px, auto) / 1fr 1fr;
+        }
+        .image-wrapper {
+            grid-area: 1 / 1 / span 1 / span 1;
+            order: -1;
+        }
+        img {
+            content: url("../section-4/tundra-large.jpg");
+        }
+        .item1 {
+            margin: 75px;
+        }
+    }
+}
+
+.section5 {
+    text-align: center;
+    padding: 19px;
+    .grid {
+        display: grid;
+        grid-template: minmax(150px, 1fr) auto minmax(150px, 1fr) / repeat(2, 1fr);
+        gap: 10px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .item2,
+    .item3,
+    .item4,
+    .item5 {
+        display: none;
+    }
+    .item1 {
+        grid-area: 2 / 1 / span 1 / span 2;
+        order: 1;
+        margin: -100px 10px;
+        padding: 10px;
+        background-color: white;
+        @include flexCenter(column);
+    }
+    @include media-min-width(768px) {
+        .grid {
+            grid-template:
+                "image1 image2 art image3 image4" minmax(auto, 20vw)
+                "image1 image5 art image6 image4" minmax(auto, 20vw)
+                "image7 image5 art image6 image8" minmax(auto, 20vw) / 
+                2fr 2fr 2fr 2fr 2fr;
+        }
+        .item2,
+        .item3,
+        .item4,
+        .item5 {
+            display: unset;
+        }
+        .item1 {
+            grid-area: art;
+            margin: calc(70% - 20px) -50%;
+        }
+        .item2 {
+            grid-area: image1;
+        }
+        .item3 {
+            grid-area: image5;
+        }
+        .item4 {
+            grid-area: image6;
+        }
+        .item5 {
+            grid-area: image4;
+        }
+        .item6 {
+            grid-area: image2;
+        }
+        .item7 {
+            grid-area: image3;
+        }
+        .item8 {
+            grid-area: image7;
+        }
+        .item9 {
+            grid-area: image8;
+        }
+    }
+}

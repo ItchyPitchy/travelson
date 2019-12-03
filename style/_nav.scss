@@ -1,0 +1,36 @@
+.upper-nav {
+    @include flexCenter(column);
+    gap: 10px;
+    height: 100px;
+    background-color: $sectionBackground-odd;
+    padding: 0 20px;
+    ul {
+        @include removeMarginAndPadding();
+    }
+    li {
+        display: inline-block;
+        list-style-type: none;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        margin: 5px;
+    }
+    .navbar-logo {
+        font-family: 'Unica One', sans-serif;
+        font-size: 26px;
+        color: #ff8673;
+        margin: 5px;
+    }
+    @include media-min-width(768px) {
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 75px;
+        li {
+            font-size: 16px;
+        }
+        .navbar-logo {
+            flex: auto;
+        }
+        
+    }
+}
