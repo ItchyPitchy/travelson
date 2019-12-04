@@ -1,18 +1,21 @@
-.header-content-wrapper {
-    position: relative;
-    @include flexCenter(row);
+header {
+    background-color: #0c202ab2;
+    .header-content-wrapper {
+        position: relative;
+        @include flexCenter(row);
+    }
     .header-img {
         content: url(../header/header-small.jpg);
         width: 100%;
-        min-height: 325px;
-        max-height: calc(100vh - 100px);
-        z-index: -1;
+        height: calc(100vh - 100px);
         object-fit: cover;
+        z-index: -1;
     }
     .header-text-wrapper {
         text-align: center;
         position: absolute;
         width: 80%;
+        z-index: 1;
     }
     h1 {
         font-size: 27px;
@@ -26,7 +29,7 @@
     @include media-min-width(768px) {
         .header-img {
             content: url(../header/header-large.jpg);
-            max-height: calc(100vh - 75px);
+            height: calc(100vh - 75px);
         }
         .header-text-wrapper {
             top: 30px;

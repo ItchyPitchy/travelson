@@ -1,6 +1,7 @@
-$sectionBackground-odd: #394951;
+$section-background-even: #394951;
 $mainFontFamily: "Poppins", sans-serif;
-$paragraphFontSize: 14px;
+$general-paragraph-fontsize-s: 14px;
+$general-paragraph-fontsize-l: 16px;
 
 @mixin flexCenter($direction) {
     display: flex;
@@ -19,6 +20,14 @@ $paragraphFontSize: 14px;
     }
 }
 
+@mixin general-grid($template) {
+    display: grid;
+    grid-template: $template;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
 %general-grid-image {
     display: block;
     object-fit: cover;
@@ -27,4 +36,15 @@ $paragraphFontSize: 14px;
     max-height: 100%;
     max-width: 100%;
     position: absolute;
+}
+
+%general-grid-image-holder {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+%general-h-properties {
+    color: #9d5c5f;
+    font-weight: bold;
 }

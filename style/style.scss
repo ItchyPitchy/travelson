@@ -1,41 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins|Unica+One&display=swap");
-@import "variables";
-@import "nav";
-@import "header";
-@import "main";
-
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: $mainFontFamily;
-    @include removeMarginAndPadding();
-    h1,
-    h2,
-    h3 {
-        @include removeMarginAndPadding();
-        color: #9d5c5f;
-        font-weight: bold;
-    }
-    p {
-        font-size: $paragraphFontSize;
-        @include removeMarginAndPadding();
-    }
-}
-
-section:nth-of-type(even) {
-    background-color: $sectionBackground-odd;
-}
-
-
-
-.bottom-nav {
-    @extend .upper-nav;
-    height: 150px;
-    @include media-min-width(768px) {
-        @include flexCenter(column);
-        height: 250px;
-    }
-}
+@import "./variables/_variables.scss";
+@import "./partials/_body.scss";
+@import "./partials/_nav.scss";
+@import "./partials/_header.scss";

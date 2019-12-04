@@ -1,13 +1,12 @@
 .upper-nav {
     @include flexCenter(column);
-    gap: 10px;
     height: 100px;
-    background-color: $sectionBackground-odd;
+    background-color: $section-background-even;
     padding: 0 20px;
-    ul {
+    .menu {
         @include removeMarginAndPadding();
     }
-    li {
+    .menu__item {
         display: inline-block;
         list-style-type: none;
         font-size: 14px;
@@ -25,12 +24,27 @@
         flex-direction: row;
         justify-content: flex-end;
         height: 75px;
-        li {
-            font-size: 16px;
+        .menu__item {
+            font-size: $general-paragraph-fontsize-l;
         }
         .navbar-logo {
             flex: auto;
         }
         
+    }
+}
+
+.bottom-nav {
+    @extend .upper-nav;
+    height: 150px;
+    .footer-logo {
+        font-family: 'Unica One', sans-serif;
+        font-size: 26px;
+        color: #ff8673;
+        margin: 5px;
+    }
+    @include media-min-width(768px) {
+        @include flexCenter(column);
+        height: 250px;
     }
 }
